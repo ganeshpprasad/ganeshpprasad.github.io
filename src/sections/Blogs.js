@@ -4,9 +4,11 @@ export const Blogs = () => {
 	const renderBlogs = (item, index) => {
 		return (
 			<div className='blog-item'>
-				<div className='blog-title'>{item.name}</div>
-				<div className='blog-title'>{item.img}</div>
-				<a target='_blank' href={item.link} className='blog-title'>
+				<div className='blog-name'>{item.name}</div>
+				<div className='blog-img-con'>
+					<img className='blog-img' src={item.img} alt='' />
+				</div>
+				<a target='_blank' href={item.link} className='blog-link'>
 					Read more
 				</a>
 			</div>
@@ -20,13 +22,16 @@ export const Blogs = () => {
 				{[
 					{
 						name: 'React native shallow end',
-						img: null,
+						img:
+							'https://miro.medium.com/max/700/0*eII6rCGzMjXKJeKU',
 						link: 'https://www.medium.com',
 					},
 					{
 						name: 'Github',
-						img: null,
-						link: 'https://www.medium.com',
+						img:
+							'https://miro.medium.com/max/700/0*eII6rCGzMjXKJeKU',
+						link:
+							'https://engineering.hiverhq.com/building-github-apps-to-fine-tune-github-experience-fa7b3be41e32?source=your_stories_page---------------------------&gi=efbae7c75f9e',
 					},
 					{
 						name: 'React native deep end',
