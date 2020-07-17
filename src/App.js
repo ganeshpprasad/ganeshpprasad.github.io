@@ -7,7 +7,7 @@ function App() {
 	let parallax;
 	return (
 		<div className='App'>
-			<Parallax pages={4} scrolling={true} ref={ref => (parallax = ref)}>
+			<Parallax pages={5} scrolling={true} ref={ref => (parallax = ref)}>
 				<Main />
 				<Projects />
 				<Blogs />
