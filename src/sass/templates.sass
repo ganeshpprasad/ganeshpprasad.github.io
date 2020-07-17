@@ -1,9 +1,12 @@
+@import vars
+
 .templ-con
     display: flex
     height: 100vh
 
 .templ-left, .templ-right
     width: 50%
+    padding: 2rem
 
 .templ-left
     border-right: 0.5px solid gray
@@ -13,3 +16,8 @@
 .templ-right
     border-top: 0.5px solid gray
     border-bottom: 0.5px solid gray
+
+.templ-desc
+    margin-top: 3rem
+    font-size: 1.2rem !important
+    @include SecondFont

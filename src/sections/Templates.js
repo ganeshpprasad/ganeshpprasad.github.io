@@ -4,15 +4,18 @@ export const Templates = () => {
 	return (
 		<div className='templ-con'>
 			<div className='templ-left'>
-				<div className='templ-title'>An Ecommerce template</div>
+				<div className='primary templ-title'>An Ecommerce template</div>
 				<div className='templ-desc'>
-					;aslkdfj as;ldkfj a;sldfkj a;sldkfj
+					Template built using nextjs and woocomerce
 				</div>
 			</div>
 			<div className='templ-right'>
-				<div className='templ-title'>An Ecommerce template</div>
+				<div className='primary templ-title'>
+					Food ordering service template
+				</div>
 				<div className='templ-desc'>
-					;aslkdfj as;ldkfj a;sldfkj a;sldkfj
+					Front end template for services like food ordering with home
+					page, cart page and menu list page.
 				</div>
 			</div>
 		</div>
