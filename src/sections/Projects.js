@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import { Link } from '../assets/icons';
+import CLICK from '../assets/click.png';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 
 export const projects = {
@@ -29,21 +30,46 @@ class ProjectItem extends Component {
 
 	render() {
 		let desc, title, url, offset, techstack, sub, when, info, appUrl;
+		let desc2,
+			title2,
+			url2,
+			offset2,
+			techstack2,
+			sub2,
+			when2,
+			info2,
+			appUrl2;
 
 		switch (this.props.project) {
 			case projects.NEWS_APP:
-				info = `PROJECTS`;
+				info = `PERSONAL PROJECT`;
 				appUrl = `https://news-app-gp.herokuapp.com/`;
 				url = `https://github.com/ganeshpprasad/newsapp`;
-				title = `See all the news`;
+				title = `A News App`;
 				desc = [
-					`A nextjs app which fetches news data from NewsAPI.
-			The app is meant to be one stop for different news publications.
+					`A news app which fetches data from the NewsAPI.
+			The app provides a space to checkout same topic news from different publications.
 			`,
-					`You can search and filter the news.`,
 				];
 				offset = 0;
 				techstack = [
+					techs.TP,
+					techs.R,
+					techs.Next,
+					techs.Hooks,
+					techs.Heroku,
+				];
+				// 2
+				info2 = `FREELANCE`;
+				appUrl2 = `https://menucode.in/1`;
+				title2 = `Food ordering service`;
+				desc2 = [
+					`A single platform for ordering food inside the hotel and outside for multiple 
+					hotels in India.`,
+					`Note: Mobile only website.`,
+				];
+				offset2 = 0;
+				techstack2 = [
 					techs.TP,
 					techs.R,
 					techs.Next,
@@ -70,21 +96,68 @@ class ProjectItem extends Component {
 					techs.Docker,
 					techs.Heroku,
 				];
+				info2 = `FREELANCE`;
+				url2 = `https://ardeo.in`;
+				title2 = `Ardeo brand  website`;
+				desc2 = [
+					`Ardeo is a brand building a sustainable product cycle. Their first apparel 
+					is made using recycled PET bottles. They manufacture apparel from other organic fibres.`,
+				];
+				offset2 = 0;
+				techstack2 = [techs.Next, techs.Node, techs.Docker];
+				break;
+			case 'Helio':
+				info = `FREELANCE`;
+				url = `https://github.com/ganeshpprasad/journalRecorder`;
+				appUrl = `helioscope.in`;
+				title = `Helioscope`;
+				desc = [
+					`A product website for Helioscope. They are building solar tracker which 
+					can improve the solar panel efficiency by keeing the panel at right angles.`,
+				];
+				offset = 0;
+				techstack = [
+					techs.Next,
+					techs.Node,
+					techs.Docker,
+					techs.Heroku,
+				];
+				info2 = `FREELANCE`;
+				url2 = `https://ardeo.in`;
+				title2 = `Ardeo brand  website`;
+				desc2 = [
+					`Ardeo is a brand building a sustainable product cycle. Their first apparel 
+					is made using recycled PET bottles. They manufacture apparel from other organic fibres.`,
+				];
+				offset2 = 0;
+				techstack2 = [techs.Next, techs.Node, techs.Docker];
 				break;
 			default:
-				info = `WORK EXPERIENCE`;
-				title = `Hiver`;
-				sub = ` Front End and React Native Developer`;
+				info = `FREELANCE`;
+				title = `Health Innovation Exchange`;
+				sub = ` Website Development for Zivost`;
 				desc = [
+					`Due to COVID-19 the UNAIDS conference Health Innovation Exchange was 
+					a virtual conference `,
+					`The website had chat and video conferencing integration`,
+				];
+				offset = 0;
+				when = 'May 2020';
+				techstack = [techs.R, techs.Redux];
+				info2 = `WORK EXPERIENCE`;
+				appUrl = 'https://event.healthinnovation.exchange';
+				title2 = `Hiver`;
+				sub2 = ` Front End and React Native Developer`;
+				desc2 = [
 					`I started off as a web developer and moved
 				on to React Native develoment. Solely maintaining the app
 				for about 6 months. `,
 					`I got to build Hiver Analytics using chartjs`,
 					`I built react-native app and setup CI/CD`,
 				];
-				offset = 0;
-				when = 'April 2017 - Dec 2019';
-				techstack = [
+				offset2 = 0;
+				when2 = '2y 9m';
+				techstack2 = [
 					techs.Back,
 					techs.R,
 					techs.RN,
@@ -99,7 +172,12 @@ class ProjectItem extends Component {
 		}
 
 		return (
-			<div className='proj-con'>
+			<div
+				className='proj-con'
+				style={{
+					cursor: `url(${CLICK}), auto`,
+				}}
+			>
 				<ParallaxLayer
 					style={{ display: 'flex' }}
 					offset={offset}
@@ -153,7 +231,48 @@ class ProjectItem extends Component {
 					>
 						REV
 					</div>
-					<div className='proj-desc-con'></div>
+					<div className='proj-desc-con'>
+						<div className='secondary info'>{info2}</div>
+						<h2 className='primary proj-title'>{title2}</h2>
+						<h4 className='tertiary'>{sub2}</h4>
+						{when2 ? (
+							<h4 className='tertiary-black'>{when2}</h4>
+						) : null}
+						{desc2.map(text => {
+							return (
+								<p className='secondary-black proj-desc'>
+									{text}
+								</p>
+							);
+						})}
+						{url2 ? (
+							<a
+								className='proj-link'
+								rel='noopener noreferrer'
+								target='_blank'
+								href={url2}
+							>
+								Github
+								<Link style={'width: 50rem'} />
+							</a>
+						) : null}
+						{appUrl2 ? (
+							<a
+								className='proj-link'
+								rel='noopener noreferrer'
+								target='_blank'
+								href={appUrl2}
+							>
+								Open App
+								<Link style={'width: 50rem'} />
+							</a>
+						) : null}
+						<div className={'tech-con'}>
+							{techstack2.map(item => {
+								return <span className='tech'>{item}</span>;
+							})}
+						</div>
+					</div>
 				</ParallaxLayer>
 			</div>
 		);

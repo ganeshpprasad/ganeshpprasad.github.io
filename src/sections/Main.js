@@ -5,8 +5,8 @@ import { ParallaxLayer, Parallax } from 'react-spring/renderprops-addons';
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 const items = [
-	"I'm working as a freelance Web and Mobile app developer since I wanted to flex my networking and communication skills.",
-	"I'm also seeking interesting opportunities in the mobile app development field.",
+	"I'm a fulltime freelancer experienced in development of web and mobile apps.",
+	"I'm currently based in Mangalore. Working remotely with clients.",
 ];
 export const Main = () => {
 	// const props = useSpring({ opacity: 1, from: { opacity: 0 } });
@@ -24,8 +24,9 @@ export const Main = () => {
 	return (
 		<div className={'main-con'}>
 			<div className='left-con'>
-				<h2 className={'salut'}>Hello!</h2>
-				<h2 className={'primary'}>I'm Ganesh Prasad P</h2>
+				{/* Pleased to have you here. */}
+				<h2 className={'salut'}>Hi! Welcome to my portfolio site.</h2>
+				<h2 className={'primary'}>I'm Ganesh Prasad P,</h2>
 				<div>
 					{trail.map(({ x, height, ...rest }, index) => (
 						<animated.div
@@ -48,10 +49,10 @@ export const Main = () => {
 				</div>
 				<div>
 					{/* <ParallaxLayer offset={0} speed={1}> */}
-					<animated.div style={spring}>
+					{/* <animated.div style={spring}>
 						<MobDev />
 						<WebDev />
-					</animated.div>
+					</animated.div> */}
 					{/* </ParallaxLayer> */}
 				</div>
 			</div>
