@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Link } from '../assets/icons';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 
@@ -22,7 +22,7 @@ export const techs = {
 	TP: 'Typescript',
 };
 
-export class Projects extends Component {
+class ProjectItem extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -42,7 +42,7 @@ export class Projects extends Component {
 			`,
 					`You can search and filter the news.`,
 				];
-				offset = 1.3;
+				offset = 0;
 				techstack = [
 					techs.TP,
 					techs.R,
@@ -61,7 +61,7 @@ export class Projects extends Component {
 						get back to and read them later`,
 					`Meetings can also be recorded for written records.`,
 				];
-				offset = 2;
+				offset = 0;
 				techstack = [
 					techs.RN,
 					techs.Redux,
@@ -82,7 +82,7 @@ export class Projects extends Component {
 					`I got to build Hiver Analytics using chartjs`,
 					`I built react-native app and setup CI/CD`,
 				];
-				offset = 0.6;
+				offset = 0;
 				when = 'April 2017 - Dec 2019';
 				techstack = [
 					techs.Back,
@@ -103,7 +103,7 @@ export class Projects extends Component {
 				<ParallaxLayer
 					style={{ display: 'flex' }}
 					offset={offset}
-					speed={0.5}
+					// speed={0.5}
 				>
 					<div className='proj-sec'>
 						<div className='secondary info'>{info}</div>
@@ -147,9 +147,34 @@ export class Projects extends Component {
 							})}
 						</div>
 					</div>
+					<div
+						className='middle-btn'
+						onClick={this.props.nextProject}
+					>
+						REV
+					</div>
 					<div className='proj-desc-con'></div>
 				</ParallaxLayer>
 			</div>
 		);
 	}
 }
+
+export const Projects = props => {
+	const [projIndex, setProjIndex] = useState(0);
+
+	let projectValues = [null, projects.VOICE_REC, projects.NEWS_APP];
+
+	const nextProject = () => {
+		setProjIndex((projIndex + 1) % 3);
+	};
+
+	return (
+		<>
+			<ProjectItem
+				nextProject={nextProject}
+				project={projectValues[projIndex]}
+			/>
+		</>
+	);
+};
