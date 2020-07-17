@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTrail, animated, useSpring } from 'react-spring';
 import { DEV1, DEV2, MobDev, WebDev } from '../assets/icons';
-import { ParallaxLayer } from 'react-spring/renderprops-addons';
+import { ParallaxLayer, Parallax } from 'react-spring/renderprops-addons';
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 const items = [
