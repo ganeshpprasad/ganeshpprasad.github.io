@@ -9,16 +9,20 @@
 
 .salut
     margin-top: 3rem
-    font-size: 4rem !important
     margin-bottom: 1rem
     @include MainFont
+    @include SalutFontSize
 
 .primary
     @include MainFont
+    @include MainFontSize
 
 .secondary
-    color: #1Ac
+    @include AccentFontColor
     @include SecondFont
+    @include SecondFontSize
 
 .secondary-black
+    @include SecondFontColor
+    @include SecondFontSize
     @include SecondFont

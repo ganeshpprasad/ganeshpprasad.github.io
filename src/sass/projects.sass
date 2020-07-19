@@ -2,42 +2,38 @@
 
 .proj-con
     display: flex
-    height: 100vh
+    @include Height100
 
 .proj-sec
-    width: 50%
-    border-top: 0.5px solid gray
-    border-bottom: 0.5px solid gray
     padding: 2rem
+    @include Width50
+    @include TopBottomBorder(.5px, gray)
 
 .proj-title
-    font-size: 4rem !important
     margin-block-start: 1rem
     margin-block-end: 1rem
+    @include SalutFontSize
 
 .tertiary, .tertiary-black
-    font-size: 1rem
-    margin: 0rem 0rem
-    font-family: 'Open Sans'
     margin: 0.5rem 0
+    @include SecondFont
 
 .tertiary
-    color: #1Ac
+    @include AccentFontColor
 
 .middle-btn
     position: absolute
     left: 45.5%
     top: 50%
-    background: #e42
     padding: 2rem 1.6rem
     border-radius: 50%
+    background: $RED
 
 .proj-desc-con
-    border-left: 0.5px solid gray
-    border-top: 0.5px solid gray
-    border-bottom: 0.5px solid gray
-    width: 50%
     padding: 2rem
+    border-left: 0.5px solid gray
+    @include Width50
+    @include TopBottomBorder(.5px, gray )
 
 .proj-desc
     font-size: 1rem !important
@@ -45,18 +41,18 @@
 
 .proj-link
     text-decoration: none
-    color: #19f
     cursor: pointer
+    @include AccentFontColor
 
 .tech-con
     display: flex
     flex-direction: row
-    font-family: 'Roboto Mono'
     margin-top: 1rem
     width: 100%
     flex-wrap: wrap
     justify-content: flex-start
     font-size: 0.9rem
+    @include AccentFont
 
 .tech
     margin-right: 1rem

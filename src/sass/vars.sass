@@ -1,9 +1,39 @@
 @mixin MainFont
-    font-size: 3rem
     font-family: 'Oswald'
+
+@mixin SalutFontSize
+    font-size: 5rem
+
+@mixin MainFontSize
+    font-size: 3rem
 
 @mixin SecondFont
     font-family: 'Open Sans'
+
+@mixin AccentFont
+    font-family: 'Roboto Mono'
+
+@mixin SecondFontSize
     font-size: 1.5rem
 
+@mixin MainFontColor
+    color: #111111
+
+@mixin SecondFontColor
+    color: #333333
+
+@mixin AccentFontColor
+    color: $PRIMARY
+
+@mixin Height100
+    height: 100vh
+
+@mixin Width50
+    width: 50%
+
+@mixin TopBottomBorder($size, $color)
+    border-top: $size solid $color
+    border-bottom: $size solid $color
+
 $PRIMARY: #1af
+$RED : #e42

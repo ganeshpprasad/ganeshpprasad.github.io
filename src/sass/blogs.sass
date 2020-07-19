@@ -1,3 +1,5 @@
+@import vars
+
 .blog-title
     font-size: 0.9rem
     margin-top: 1rem
@@ -5,12 +7,16 @@
     margin-bottom: 3rem
 
 .blog-name
-    font-family: 'oswald'
     margin-bottom: 1rem
+    @include MainFont
+    @include SecondFontSize
 
 .blog-items-con
-    margin-left: 3rem
     display: flex
+    margin-left: 3rem
+
+.blog-img
+    margin-bottom: 1rem
 
 .blog-img
     width: 90%
@@ -24,16 +30,16 @@
     text-decoration: none
     color: black
     padding: 0.5rem
-    font-family: open sans
+    @include SecondFont
 
 .blogs-con
     margin-bottom: 3rem
 
 // styling of medium blogs
 .post-title
-    font-family: 'oswald'
     text-decoration: none
-    color: black
+    @include MainFont
+    @include MainFontColor
 
 .author, .read-more
     display: none
